@@ -1,0 +1,72 @@
+body {
+  grid-auto-flow: row;
+  grid-auto-rows: 1fr;
+}
+
+form {
+  display: grid;
+  margin: auto;
+  background-color: var(--darkest);
+  grid-row-gap: 1rem;
+  padding: 1rem;
+  width: 90vw;
+  max-width: 700px;
+  border-radius: .5rem;
+}
+
+form h3 {
+  text-align: center;
+  margin: auto;
+  padding: .3rem 1rem;
+  color: var(--orange);
+  font-size: 1.4em;
+  border-bottom: 1px solid var(--orange);
+}
+
+form p {
+  margin: auto;
+  text-align: center;
+  color: #fff;
+}
+
+form input, form select {
+  margin: auto;
+  width: 100%;
+  max-width: 200px;
+  text-align: center;
+  padding: .2rem .5rem;
+  border-radius: .2rem;
+  border: 0;
+  color: #000;
+  outline: 1px solid #0000;
+}
+
+form input:focus, form input:hover, form button:hover {
+  background-color: #eee;
+}
+
+form button {
+  margin: auto;
+  width: 100%;
+  max-width: 200px;
+  padding: .2rem .5rem;
+  border-radius: .2rem;
+  border: 0;
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+}
+
+.login p, .signup p {
+  height: 0;
+  overflow: hidden;
+  transition: height .3s;
+}
+
+.login #exempt, .signup #exempt {
+  height: auto;
+  color: #ccc;
+  font-size: .9em;
+  width: 60%;
+  min-width: 200px;
+}

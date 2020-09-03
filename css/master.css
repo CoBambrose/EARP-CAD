@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Red Nose', sans-serif;
+  color: #fff;
+}
+
+html {
+  --darkest: #131313;
+  --dark: #353843;
+  --orange: #ed7a16;
+}
+
+body {
+  display: grid;
+  overflow-x: hidden;
+  background-color: var(--dark);
+  min-height: 100vh;
+}

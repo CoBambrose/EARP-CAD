@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Red+Rose&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Red Nose', sans-serif;
+  color: #fff;
+}
+
+html {
+  --darkest: #131313;
+  --dark: #353843;
+  --orange: #ed7a16;
+
+  --pd-dark: #00104b;
+  --pd-darkest: #000426;
+
+  --fd-dark: #4f0000;
+  --fd-darkest: #2a0000;
+
+  --ias-dark: #403e22;
+  --ias-darkest: #706216;
+
+  --dis-dark: #3c3c3c;
+  --dis-darkest: #222222;
+}
+
+body {
+  display: grid;
+  grid-auto-flow: row;
+  grid-auto-rows: auto;
+  grid-row-gap: 1rem;
+  overflow-x: hidden;
+  min-height: 100vh;
+  background-color: var(--dark);
+}
+
+body.pd {
+  background-color: var(--pd-dark);
+}
+
+body.fd {
+  background-color: var(--fd-dark);
+}
+
+body.ias {
+  background-color: var(--ias-dark);
+}
+
+body.dispatch {
+  background-color: var(--dis-dark);
+}
+
+div {
+  display: grid;
+  width: 90vw;
+  max-width: 900px;
+  margin: auto;
+  padding: 1rem;
+  background-color: var(--darkest);
+}
+
+div h2 {
+  text-align: center;
+  margin: auto;
+} div h3 {
+  margin: .5rem auto;
+  text-align: center;
+}
+
+.pd div {
+  background-color: var(--pd-darkest);
+}
+
+.fd div {
+  background-color: var(--fd-darkest);
+}
+
+.ias div {
+  background-color: var(--ias-darkest);
+}
+
+.dispatch div {
+  background-color: var(--dis-darkest);
+}
+
+div a {
+  margin: 2rem auto 1rem;
+  padding: 1rem 2rem;
+  background-color: var(--dark);
+  text-decoration: none;
+  transition: background-color .2s;
+} div a:hover {
+  background-color: var(--darkest);
+}
+
+div table {
+  margin: 1rem;
+  border-collapse: collapse;
+  box-sizing: border-box;
+  max-width: calc(100% - 2rem);
+  overflow-x: auto;
+} div table * {
+  border: 1px solid #fff;
+  padding: .5rem;
+  box-sizing: border-box;
+}
+
+div form {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin: auto;
+} div form select {
+  color: #000;
+  margin: .5rem 1rem;
+} div form option {
+  color: #000;
+} div form optgroup {
+  color: #000;
+} div form button {
+  margin: .5rem 1rem;
+  padding: .2rem .5rem;
+  color: #000;
+  cursor: pointer;
+}
+
+.table-cont {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.unit table {
+  min-width: 500px;
+} .unit table * {
+  text-align: center;
+} .unit table th:nth-child(3) {
+  width: 50%;
+}
+
+.request {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(5,1fr);
+  grid-row-gap: 2rem;
+} .request h2 {
+  grid-column: 1/6;
+  margin: auto;
+} .request a {
+  margin: auto .2rem;
+  padding: 1rem;
+  border: 2px solid #fff5;
+  text-align: center;
+} .request a:hover {
+  border: 2px solid #fff;
+}
+
+.nav a {
+  margin: 1rem auto;
+}
+
+.character-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+} .character-info h2 {
+  grid-column: 1/3;
+} .character-info p {
+  padding: .5rem;
+} .character-info p:nth-child(2n) {
+  text-align: right;
+  font-weight: bold;
+} .character-info button {
+  padding: .2rem .5rem;
+  color: #000;
+}
+
+.edit {
+  display: grid;
+  padding: 2rem;
+  grid-row-gap: 2rem;
+  grid-template-rows: auto 1fr;
+} .edit h2 {
+  margin: auto;
+  text-align: center;
+} .edit form {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: 1fr 1fr auto;
+  width: 100%;
+  max-width: 400px;
+  height: 50vh;
+} .edit form textarea {
+  color: #000;
+  padding: .3rem;
+  outline: 0;
+} .edit form button {
+  grid-column: 1/3;
+  margin: 2rem auto 1rem;
+  padding: 1rem 2rem;
+  border: 0;
+  color: #fff;
+  background-color: var(--dark);
+  text-decoration: none;
+  transition: background-color .2s;
+} .edit form button:hover {
+  background-color: var(--darkest);
+}
+
+@media (max-width: 1000px) {
+  .request {
+    grid-template-columns: repeat(3, 1fr);
+  } .request h2 {
+    grid-column: 1/4;
+  }
+}
+
+@media (max-width: 800px) {
+  .character-info {
+    grid-template-columns: 1fr;
+  } .character-info h2 {
+    grid-column: 1/2;
+  } .character-info p {
+    text-align: center;
+  } .character-info p:nth-child(2n) {
+    text-align: center;
+    font-weight: bold;
+    text-decoration: underline;
+  }
+}
+
+@media (max-width: 650px) {
+  .request {
+    grid-template-columns: 1fr;
+    grid-row-gap: .5rem;
+  } .request h2 {
+    grid-column: 1/2;
+  }
+}
