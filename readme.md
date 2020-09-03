@@ -104,7 +104,6 @@ __Password__: _password_
 - Dispatchers can cancel backup requests
 - Bug Fixes
 
-
 ## Developer
 
 Made by __Cobain Ambrose__:
