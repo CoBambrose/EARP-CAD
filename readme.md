@@ -1,12 +1,8 @@
 # EA-RP CAD
 
-***
-
 ## Purpose
 
 A cross-platform _web-app_ designed for the use of members, staff and developers of __Flashing Lights__ Roleplay Servers to improve dispatch and communication procedures and therefore efficiency and immersion put into using or managing units in __Flashing Lights__.
-
-***
 
 ## Installation
 
@@ -37,8 +33,6 @@ __Username__: _administrator_
 __Password__: _password_
 
 #### Enjoy!
-
-***
 
 ## Developer
 
