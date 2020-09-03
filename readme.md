@@ -108,15 +108,20 @@ __Password__: _password_
 
 ## Developer
 
-Made by __Cobain Ambrose__:
-\tThe Lead Programmer and Co-Director behind __Ambr3 Ltd__
+Made by __Cobain Ambrose__: The Lead Programmer and Co-Director behind [Ambr3 Ltd](http://ambr3.com)
 
-Ambr3's Website: [Ambr3](http://ambr3.com)
+Ambr3's Website: http://ambr3.com
+
+Support: enquiries@ambr3.com
 
 ## Collaborators
 
 The logo was made by [Emergency Academy Roleplay](http://ea-rp.com)
 
+Beta tested and used by [Emergency Academy Roleplay](http://ea-rp.com)
+
+Made for use with [Flashing Lights - Police, Firefighting, Emergency Services Simulator](https://store.steampowered.com/app/605740/Flashing_Lights__Police_Firefighting_Emergency_Services_Simulator/)
+
 ## License
 
-Feel free to use this open-source application but please do not claim my work as your own, even if you change it slightly. If you wish to assist by submitting a pull request or creating your own branch, please feel free to do so.
+Feel free to use this open-source application but ___DO NOT___ claim my work as your own, even if you change it slightly. If you wish to assist by submitting a pull request or creating your own branch, please feel free to do so and contact me at coby@ambr3.com.
