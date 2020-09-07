@@ -12,8 +12,8 @@
   ];
 
   if (!isset($_SESSION['id']) || !isset($_GET['type'])) {
-    // header('Location: ../');
-  } else {
+    header('Location: ../');
+  } else if (isset($_GET['location'])) {
     $type = $_GET['type'];
     $unit = unitFromChar($conn, $_SESSION['c']);
 
@@ -49,7 +49,8 @@
       $stmt->bind_param("si", $types, $row['id']);
       $stmt->execute();
     }
-    // header("Location: ../");
+  } else {
+
   }
 ?>
 
@@ -92,7 +93,7 @@
   <form action="./request.php" method="get">
     <input type="text" disabled value="<?php echo $typeEnumeration[$_GET['type']]; ?>">
     <input type="hidden" name="type" value="<?php echo $_GET['type']; ?>">
-    <input type="text" autofocus name="location" placeholder="Location">
+    <input type="text" autofocus name="location" placeholder="Location" value="<?php echo $unit['postal']; ?>" onfocus="this.select()">
     <input type="submit" value="Request">
   </form>
 </div>
