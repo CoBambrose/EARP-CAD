@@ -73,6 +73,11 @@ if (isset($_POST['command'])) {
     }
   } else if ($command == 'kickall') {
     $callsign = $_POST['command'][1];
+    $stmt = $conn->prepare("UPDATE `cad_units` SET `staff`='' WHERE 1=1");
+    $stmt->bind_param("s", $callsign);
+    $stmt->execute();
+  } else if ($command == 'kick') {
+    $callsign = $_POST['command'][1];
     $stmt = $conn->prepare("UPDATE `cad_units` SET `staff`='' WHERE `callsign`=?");
     $stmt->bind_param("s", $callsign);
     $stmt->execute();
@@ -160,7 +165,8 @@ $statusEnumeration = [
         <li><span>/l {unit}</span> : Clears unit's location</li>
         <li><span>/u {unit} {status} {postal}</span> : Updates a unit's status & location</li>
         <li><span>/v {unit}</span> : View detailed information about a unit</li>
-        <li><span>/kickall {unit}</span> : Kick all staff from the unit</li>
+        <li><span>/kick {unit}</span> : Kick all staff from a unit</li>
+        <li><span>/kickall {unit}</span> : Kick everyone from every unit</li>
         <li><span>/exit</span> : Exit the Dispatch CAD</li>
       </ul>
     </div>

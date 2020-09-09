@@ -6,8 +6,10 @@
   $stmt->execute();
   $result = $stmt->get_result();
   $requests = [];
+  $locations = [];
   while ($row = $result->fetch_assoc()) {
     $requests[$row['unitID']] = [];
+    $locations[$row['unitID']] = $row['location'];
     $row['types'] = explode('|', $row['types']);
     foreach ($row['types'] as $key => $type) {
       array_push($requests[$row['unitID']], $type);
@@ -30,6 +32,8 @@
       <span><?php echo $typeEnumeration[$rq]; ?></span>
       <a href="./cancel-backup.php?unitID=<?php echo $unit; ?>&type=<?php echo $rq; ?>"></a>,
     <?php } ?>
+    to:
+    <?php echo $locations[$unit]; ?>
   </p>
 </div>
 <?php } ?>

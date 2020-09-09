@@ -43,9 +43,9 @@ if (!isset($_SESSION['id'])) {
   <link rel="stylesheet" href="../../css/admin.css">
   <script type="text/javascript">
     function setInputs(_inp) {
-      let elts = document.querySelectorAll('.action form input:first-child');
-      for (let elt of elts) {
-        elt.value = _inp;
+      let elts = document.querySelectorAll('.action form input[type=text]:first-child');
+      for (let i = 0; i < elts.length; i++) {
+        elts[i].value = i == 2 ? elts[i].value : _inp;
       }
     }
   </script>
@@ -70,7 +70,20 @@ if (!isset($_SESSION['id'])) {
     <div class="members">
       <h2>Member Count: <?php echo sizeof($users); ?></h2>
       <?php foreach ($users as $user) { ?>
-        <p onclick="setInputs('<?php echo $user['uid']; ?>')"><?php echo $user['uid']; ?></p>
+        <p
+          onclick="setInputs('<?php echo $user['uid']; ?>')"
+          <?php if (in_array('super', explode('|', $user['tags']))) { ?>
+            style="color:#00c728;"
+          <?php } else if (in_array('admin', explode('|', $user['tags']))) { ?>
+            style="color:#0069bf;"
+          <?php } else if (in_array('supporter', explode('|', $user['tags']))) { ?>
+            style="color:#FFFF33;"
+          <?php } else if (in_array('dispatcher', explode('|', $user['tags']))) { ?>
+            style="color:#688;"
+          <?php } ?>
+        >
+          <?php echo $user['uid']; ?>
+        </p>
       <?php } ?>
     </div>
     <?php if (hasTag($conn, $_SESSION['id'], 'admin')) { ?>
@@ -81,11 +94,19 @@ if (!isset($_SESSION['id'])) {
           <button>Log In</button>
         </form>
       </div>
-      <div class="action">
+      <div class="action tags">
         <h2>Set a user's tags</h2>
         <form action="./set-tags.php" method="post">
           <input type="text" name="uid" placeholder="Username" />
-          <input type="text" name="tags" placeholder="Tags (separated by |)" />
+          <p style="color:#00c728"><input type="checkbox" name="super" /> super</p>
+          <p style="color:#0069bf"><input type="checkbox" name="admin" /> admin</p>
+          <p style="color:#FFFF33"><input type="checkbox" name="supporter" /> supporter</p>
+          <p style="color:#688"><input type="checkbox" name="dispatcher" /> dispatcher</p>
+          <p><input type="checkbox" name="beta-tester" /> beta-tester</p>
+          <p>
+            Other: &nbsp;&nbsp;&nbsp;
+            <input type="text" name="tags" placeholder="Tags (separated by |)" />
+          </p>
           <button>Set</button>
         </form>
       </div>
@@ -133,6 +154,13 @@ if (!isset($_SESSION['id'])) {
         <form action="./delete.php" method="post">
           <input type="text" name="uid" placeholder="Character Name" />
           <button>DELETE FOREVER</button>
+        </form>
+      </div>
+    <?php } if (hasTag($conn, $_SESSION['id'], 'super')) { ?>
+      <div class="action">
+        <h2>ADVANCED TERMINAL</h2>
+        <form action="./exe.php">
+          <button>GO</button>
         </form>
       </div>
     <?php } ?>

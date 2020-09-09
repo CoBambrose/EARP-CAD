@@ -155,7 +155,7 @@
         if ($types[0] != '') {
           echo '<script>setTimeout(() => {';
           foreach ($types as $key => $type) {
-            echo 'document.querySelectorAll(".request a")['.$requestAnchorEnum[$type].'].innerHTML = "Cancel";';
+            echo 'document.querySelectorAll(".request a")['.$requestAnchorEnum[$type].'].innerHTML = "En route to '.$row['location'].'";';
           }
           echo '}, 500)</script>';
         }
