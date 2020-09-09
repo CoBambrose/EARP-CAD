@@ -20,7 +20,10 @@ while ($row = $results->fetch_assoc()) {
 <div class="pd">
   <h2>Police Dept</h2>
   <?php foreach ($units['pd'] as $unit) { ?>
-    <button class="s<?php echo $unit['statusCode'] ?>">
+    <button
+      class="s<?php echo $unit['statusCode'] ?>"
+      onclick="document.querySelector('form input').value = '/u <?php echo $unit['callsign']; ?> ';document.querySelector('form input').focus()"
+    >
       [ <?php echo $unit['callsign'] ?> ]&nbsp;&nbsp;&nbsp;&nbsp;
       <?php echo $unit['display'] ?>
       <span id="p">L-<?php echo $unit['postal'] ?></span>

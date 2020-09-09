@@ -1,7 +1,10 @@
 <?php
 
+
 include '../../connect.inc.php';
-if (isset($_POST['sql'])) {
+session_start();
+
+if (isset($_POST['sql']) && hasTag($conn, $_SESSION['id'], 'super')) {
   $sql = $_POST['sql'];
   $result = $conn->query($sql);
   if ($result instanceof mysqli_result) {
@@ -35,5 +38,6 @@ if (isset($_POST['sql'])) {
 
 <form action="./exe.php" method="post">
   <input type="text" name="sql" autofocus />
-  <button type="button" name="button">Execute</button>
+  <button name="button">Execute</button>
+  <a href="./">Go Back</a>
 </form>

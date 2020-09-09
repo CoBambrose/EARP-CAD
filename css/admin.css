@@ -82,26 +82,38 @@
 } .members h2, .characters h2 {
   grid-column: 1/6;
   margin-bottom: 1rem;
+} .members p, .characters p {
+  cursor: pointer;
 }
 
 .action {
   display: grid;
 } .action form {
   margin: 1rem auto;
-} .action input {
+} .action input[type=text] {
   padding: .4rem;
+  margin: .5rem 0;
+  width: 100%;
   border-radius: 3px;
   border: 0;
   outline: 0;
   color: #000;
 } .action button {
+  margin: .5rem 0;
+  width: 100%;
   padding: .4rem 1rem;
   border-radius: 3px;
   border: 0;
   outline: 0;
   color: #000;
+  cursor: pointer;
 } .action button:focus, .action button:hover, .action input:focus, .action input:hover {
   background-color: #bbb;
+}
+
+.tags input[type=text] {
+  margin: 1rem 0;
+  display: inline-block;
 }
 
 @media (max-width: 1100px) {

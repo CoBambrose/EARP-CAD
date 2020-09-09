@@ -61,7 +61,21 @@ if (!isset($_SESSION['id'])) {
       <div class="actions">
         <h2>Welcome back,
           <span><?php echo ucfirst($userData['uid']); ?></span>
-          <span>[ <?php echo join(', ', $userData['tags']); ?> ]</span>
+          <span>[
+            <?php for ($i = 0; $i < sizeof($userData['tags']); $i++) {
+              if ($userData['tags'][$i] == 'super') {
+                $userData['tags'][$i] = "<font style='color:#00c728'>super</font>";
+              } else if ($userData['tags'][$i] == 'admin') {
+                $userData['tags'][$i] = "<font style='color:#0069bf'>admin</font>";
+              } else if ($userData['tags'][$i] == 'supporter') {
+                $userData['tags'][$i] = "<font style='color:#FFFF33'>supporter</font>";
+              } else if ($userData['tags'][$i] == 'dispatcher') {
+                $userData['tags'][$i] = "<font style='color:#688'>dispatcher</font>";
+              } else {
+                $userData['tags'][$i] = "<font style='color:#fff'>".$userData['tags'][$i]."</font>";
+              }
+            } echo join(', ', $userData['tags']); ?>
+          ]</span>
         </h2>
         <form action="change-password.php" method="post" id="change-password">
           <input type="password" name="pwd" placeholder="6 - 20 characters">
