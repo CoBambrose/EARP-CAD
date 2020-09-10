@@ -114,7 +114,8 @@ __Password__: _password_
 - __/kickall__ now kicks everyone from every unit
 - Terminal auto-fills with the __/u {callsign}__ when a unit is clicked in dispatch
 - Animated view details window in dispatch
-- Bug Fixes
+- The panic button will not sounds every time a command is typed when a panic is active (Bug Fix)
+- Minor Bug Fixes
 
 ## Developer
 

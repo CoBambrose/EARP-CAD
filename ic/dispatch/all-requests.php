@@ -15,11 +15,12 @@
       array_push($requests[$row['unitID']], $type);
     }
   }
-
+$_SESSION['panics'] = 0;
   foreach ($requests as $unit => $rqs) {
     $class = '';
     if (in_array('panic', $rqs)) {
       $class = ' class="panic"';
+      $_SESSION['panics']++;
     }
 ?>
 <div>
@@ -37,3 +38,4 @@
   </p>
 </div>
 <?php } ?>
+<input style="color:#000" type="hidden" value="<?php echo $_SESSION['panics']; ?>">
