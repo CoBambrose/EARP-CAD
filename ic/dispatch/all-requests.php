@@ -15,7 +15,7 @@
       array_push($requests[$row['unitID']], $type);
     }
   }
-$_SESSION['panics'] = 0;
+  $_SESSION['panics'] = 0;
   foreach ($requests as $unit => $rqs) {
     $class = '';
     if (in_array('panic', $rqs)) {

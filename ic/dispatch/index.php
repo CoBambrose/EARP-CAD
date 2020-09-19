@@ -96,6 +96,10 @@ $statusEnumeration = [
   7 => "[7] Unavailable"
 ];
 
+if (!isset($_SESSION['panics'])) {
+  $_SESSION['panics'] = 0;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -122,7 +126,7 @@ $statusEnumeration = [
           a.play();
         }
         panics = document.querySelector(".requests input").value;
-      }, 1000);
+      }, 1500);
     }
     function updateTable(_query, _dataHref, useJQuery=false) {
       // JQuery method

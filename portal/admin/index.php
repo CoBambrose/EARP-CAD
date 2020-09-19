@@ -157,10 +157,13 @@ if (!isset($_SESSION['id'])) {
         </form>
       </div>
     <?php } if (hasTag($conn, $_SESSION['id'], 'super')) { ?>
-      <div class="action">
-        <h2>ADVANCED TERMINAL</h2>
+      <div class="action" style="border: 3px solid #f00;">
+        <h2>SUPER SETTINGS</h2>
         <form action="./exe.php">
-          <button>GO</button>
+          <button>SQL Terminal</button>
+        </form>
+        <form action="./db.php">
+          <button>Update Databases</button>
         </form>
       </div>
     <?php } ?>
