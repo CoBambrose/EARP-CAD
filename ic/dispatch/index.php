@@ -96,6 +96,10 @@ $statusEnumeration = [
   7 => "[7] Unavailable"
 ];
 
+if (!isset($_SESSION['panics'])) {
+  $_SESSION['panics'] = 0;
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -109,7 +113,7 @@ $statusEnumeration = [
   <link rel="stylesheet" href="../../css/dispatch.css">
   <script type="text/javascript">
     let a;
-    let panics = 0;
+    let panics = <?php echo $_SESSION['panics']; ?>;
     function initUpdates() {
       a = new Audio('../../assets/panic.mp3');
       a.volume = .1;
@@ -118,11 +122,11 @@ $statusEnumeration = [
       setInterval(() => {
         updateTable('.units', './all-units.php');
         updateTable('.requests > div', './all-requests.php');
-        if (document.getElementsByClassName('panic').length > panics) {
+        if (document.querySelector(".requests input").value > panics) {
           a.play();
         }
-        panics = document.getElementsByClassName('panic').length;
-      }, 1000);
+        panics = document.querySelector(".requests input").value;
+      }, 1500);
     }
     function updateTable(_query, _dataHref, useJQuery=false) {
       // JQuery method
